@@ -11,12 +11,17 @@ struct ContentView: View {
     @State private var name: String = ""
     @State private var email: String = ""
     @State private var message: String = "Write your message..."
+    @State private var hasNotfications: Bool = false
+    
     
     var body: some View {
         Form {
             TextField("Name:", text: $name)
             TextField("Email:",  text: $email)
             TextEditor(text: $message)
+            Toggle(isOn: $hasNotfications){
+                Text("Notifications")
+            }
         }
     }
 }
