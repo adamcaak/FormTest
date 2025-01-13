@@ -17,16 +17,24 @@ struct ContentView: View {
     
     var body: some View {
         Form {
-            TextField("Name:", text: $name)
-            TextField("Email:",  text: $email)
-            TextEditor(text: $message)
-            Toggle("Include Logs", isOn: $include)
-            Toggle(isOn: $hasNotfications){
-                Text("Notifications")
+            Section(header: Text("Personal Information")) {
+                TextField("Name:", text: $name)
+                TextField("Email:",  text: $email)
             }
-            Button("Submit", action: {
-                print("Tapped Button")
-            })
+            Section(header: Text("Message")) {
+                TextEditor(text: $message)
+            }
+            Section(header: Text("Options")) {
+                Toggle("Include Logs", isOn: $include)
+                Toggle(isOn: $hasNotfications){
+                    Text("Notifications")
+                }
+            }
+            Section(footer: Text("Send form")) {
+                Button("Submit", action: {
+                    print("Tapped Button")
+                })
+            }
         }
     }
 }
