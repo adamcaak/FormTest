@@ -24,6 +24,9 @@ struct ContentView: View {
             Toggle(isOn: $hasNotfications){
                 Text("Notifications")
             }
+            Button("Submit", action: {
+                print("Tapped Button")
+            })
         }
     }
 }
