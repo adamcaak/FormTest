@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var name: String = ""
     @State private var email: String = ""
     @State private var message: String = "Write your message..."
+    @State private var include: Bool = true
     @State private var hasNotfications: Bool = false
     
     
@@ -19,6 +20,7 @@ struct ContentView: View {
             TextField("Name:", text: $name)
             TextField("Email:",  text: $email)
             TextEditor(text: $message)
+            Toggle("Include Logs", isOn: $include)
             Toggle(isOn: $hasNotfications){
                 Text("Notifications")
             }
